@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Code Quest - Bug Hunter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game-wrapper">
+
+        <header class="game-header">
+            <div>
+                <p class="eyebrow">Kids Coding Adventure</p>
+                <h1>Code Quest: Bug Hunter</h1>
+                <p class="subtitle">
+                    Collect code crystals, avoid bugs and unlock every level.
+                </p>
+            </div>
+
+            <button id="soundButton" class="small-button">
+                🔊 Sound On
+            </button>
+        </header>
+
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <span class="stat-label">Score</span>
+                <strong id="scoreDisplay">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">High Score</span>
+                <strong id="highScoreDisplay">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Level</span>
+                <strong id="levelDisplay">1</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Lives</span>
+                <strong id="livesDisplay">❤️❤️❤️</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Time</span>
+                <strong id="timeDisplay">60</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Crystals</span>
+                <strong id="crystalDisplay">0 / 8</strong>
+            </div>
+
+        </section>
+
+        <section class="game-card">
+
+            <canvas
+                id="gameCanvas"
+                width="900"
+                height="520"
+            ></canvas>
+
+            <div id="startScreen" class="screen-overlay active">
+
+                <div class="overlay-content">
+                    <div class="large-icon">💻</div>
+
+                    <p class="eyebrow">Welcome, Programmer!</p>
+
+                    <h2>Enter the Digital World</h2>
+
+                    <p>
+                        Collect all the code crystals before time runs out.
+                        Avoid the bugs and look out for special power-ups.
+                    </p>
+
+                    <div class="instructions-grid">
+
+                        <div class="instruction-card">
+                            <span>⌨️</span>
+                            <strong>Move</strong>
+                            <p>Arrow keys or WASD</p>
+                        </div>
+
+                        <div class="instruction-card">
+                            <span>💎</span>
+                            <strong>Collect</strong>
+                            <p>Gather every crystal</p>
+                        </div>
+
+                        <div class="instruction-card">
+                            <span>🐞</span>
+                            <strong>Avoid</strong>
+                            <p>Stay away from bugs</p>
+                        </div>
+
+                    </div>
+
+                    <button id="startButton" class="main-button">
+                        Start Adventure
+                    </button>
+                </div>
+
+            </div>
+
+            <div id="messageScreen" class="screen-overlay">
+
+                <div class="overlay-content">
+                    <div id="messageIcon" class="large-icon">🏆</div>
+
+                    <p id="messageTag" class="eyebrow">
+                        Level Complete
+                    </p>
+
+                    <h2 id="messageTitle">
+                        Excellent Coding!
+                    </h2>
+
+                    <p id="messageText">
+                        You collected all the crystals.
+                    </p>
+
+                    <button id="messageButton" class="main-button">
+                        Next Level
+                    </button>
+                </div>
+
+            </div>
+
+            <div id="pauseScreen" class="screen-overlay">
+                <div class="overlay-content compact-content">
+                    <div class="large-icon">⏸️</div>
+                    <h2>Game Paused</h2>
+                    <p>Take a short break and continue when you are ready.</p>
+
+                    <button id="resumeButton" class="main-button">
+                        Continue Game
+                    </button>
+                </div>
+            </div>
+
+            <div id="powerStatus" class="power-status"></div>
+
+        </section>
+
+        <section class="controls-panel">
+
+            <div class="game-buttons">
+                <button id="pauseButton" class="secondary-button">
+                    ⏸ Pause
+                </button>
+
+                <button id="restartButton" class="secondary-button">
+                    ↻ Restart
+                </button>
+            </div>
+
+            <div class="legend">
+                <span>💎 Crystal</span>
+                <span>🐞 Bug</span>
+                <span>🛡️ Shield</span>
+                <span>⚡ Speed</span>
+                <span>❤️ Life</span>
+                <span>❄️ Freeze</span>
+            </div>
+
+        </section>
+
+        <section class="mobile-controls">
+
+            <button class="direction-button" data-direction="up">
+                ▲
+            </button>
+
+            <div class="horizontal-controls">
+                <button class="direction-button" data-direction="left">
+                    ◀
+                </button>
+
+                <button class="direction-button" data-direction="down">
+                    ▼
+                </button>
+
+                <button class="direction-button" data-direction="right">
+                    ▶
+                </button>
+            </div>
+
+        </section>
+
+        <section class="challenge-section">
+
+            <h2>Weekly Coding Challenges</h2>
+
+            <div class="challenge-grid">
+
+                <article>
+                    <span>Challenge 1</span>
+                    <h3>Change the Player</h3>
+                    <p>
+                        Replace the programmer emoji with a robot, animal or
+                        superhero.
+                    </p>
+                </article>
+
+                <article>
+                    <span>Challenge 2</span>
+                    <h3>Create a New Power-Up</h3>
+                    <p>
+                        Add a power-up that doubles the score for ten seconds.
+                    </p>
+                </article>
+
+                <article>
+                    <span>Challenge 3</span>
+                    <h3>Design Level Four</h3>
+                    <p>
+                        Add more bugs, more crystals and a new background colour.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="game.js"></script>
+</body>
+</html>
